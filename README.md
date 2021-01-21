@@ -4,3 +4,16 @@ The second step is to build a model for data. Using sklearn library, I created a
 By running the code, some plots will pop up for different steps to show you the process.
 Comments in this code will help you to have a better intuition of what it does.
 Thank you!
+
+Dataset before preprocessing (dataset.xls)
+![](1.png)
+
+Dataset has some outliers
+![](1.png)
+
+Dataset after preprocessing (New_data.csv)
+![](3.png)
+
+
+A created decision tree with max_depth = 3
+![](tree3.png)
