@@ -9,7 +9,7 @@ Dataset before preprocessing (dataset.xls)
 ![](1.png)
 
 Dataset has some outliers
-![](1.png)
+![](box.png)
 
 Dataset after preprocessing (New_data.csv)
 ![](3.png)
