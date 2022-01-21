@@ -11,7 +11,7 @@ There are too many features in the dataset.
 Dataset before preprocessing (dataset.xls)
 ![](1.png)
 
-They make the computation expensive and the model is probably overfitted. Let's choose 10 features with the highest correlation with the target class and drop other features. Also, some features are not important to the problem, e.g. ID of patients. We don't need them as well.
+They make the computation expensive and the model probably overfitted. Let's choose 10 features with the highest correlation with the target class and drop other features. Also, some features are not important to the problem, e.g. ID of patients. We don't need them as well.
     
     i = 'Class'
     x = {}
