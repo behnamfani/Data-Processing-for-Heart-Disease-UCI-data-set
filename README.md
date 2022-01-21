@@ -32,7 +32,6 @@ They make the computation expensive and the model probably overfitted. Let's cho
             
 Then we can detect and handle outliers using Interquartile range or Z_Score:
 
-def IQR(data):
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)
     IQR = Q3 - Q1
@@ -40,13 +39,15 @@ def IQR(data):
     return data
 
 
-def Z_Score(data):
     z_scores = stats.zscore(data)
     abs_z_scores = np.abs(z_scores)
     filtered_entries = (abs_z_scores < 3).all(axis=1)
     data = data[filtered_entries]
     return data
- 
+
+Dataset has some outliers
+![](box.png)
+
 Now we can clean our data. e.g. if there are Nan values or irrelevant values, we replace them with most frequent values (for categorical features) or the mean (for numerical features). Also, we delete duplicate data in our dataset.
 
     for i in data.columns:
@@ -65,9 +66,6 @@ Now we can clean our data. e.g. if there are Nan values or irrelevant values, we
 
     # Deleting duplicate data
     data.drop_duplicates(inplace=True)
-
-Dataset has some outliers
-![](box.png)
 
 Dataset after preprocessing (New_data.csv)
 ![](3.png)
