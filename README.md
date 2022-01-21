@@ -76,4 +76,18 @@ Dataset after preprocessing (New_data.csv)
 A created decision tree with max_depth = 3
 ![](tree3.png)
 
+Performances of different models:
+
+Decision Tree with max_depth = 3:
+
+Accuracy: 0.92, Recall: 0.9, Precision: 0.9, F_Score 0.9
+
+SVM with Linear Kernel:
+
+Accuracy: 0.88, Recall: 0.84, Precision: 0.91, F_Score: 0.87
+
+K nearest neighbor with K = 3:
+
+Accuracy: 0.86, Recall: 0.75, Precision: 0.94, F_Score 0.84
+
 Thank you for your attention!
