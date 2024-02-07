@@ -9,7 +9,7 @@ Important steps in preparing the data:
 There are too many features in the dataset. 
 
 Dataset before preprocessing (dataset.xls)
-![](1.png)
+![](reports/1.png)
 
 They make the computation expensive and the model is probably overfitted. Let's choose 10 features with the highest correlation with the target class and drop other features. Also, some features are not important to the problem, e.g. ID of patients. We don't need them as well.
     
@@ -46,7 +46,7 @@ Then we can detect and handle outliers using the Interquartile range or Z_Score:
     return data
 
 The dataset has some outliers
-![](box.png)
+![](reports/box.png)
 
 Now we can clean our data. e.g. if there are Nan values or irrelevant values, we replace them with the most frequent values (for categorical features) or the mean (for numerical features). Also, we delete duplicate data in our dataset.
 
@@ -68,11 +68,11 @@ Now we can clean our data. e.g. if there are Nan values or irrelevant values, we
     data.drop_duplicates(inplace=True)
 
 Dataset after preprocessing (New_data.csv)
-![](3.png)
+![](reports/3.png)
 
 
 A created decision tree with max_depth = 3
-![](tree3.png)
+![](reports/tree3.png)
 
 Performances of different models:
 
