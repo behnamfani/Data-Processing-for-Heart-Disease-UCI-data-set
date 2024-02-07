@@ -1,6 +1,6 @@
 # Data-Processing-for-Heart-Disease-UCI-data-set
-In this project, I worked on a part of the Heart Disease UIC dataset. This dataset is telling us whether a person has heart disease or not given some symptoms. The First step is to process the data like data Cleaning, Reduction, Normalization, etc.
-The second step is to build a model for data. Using sklearn library, I created a Decision tree, SVM, and KNN models and check their performances on the dataset. 
+In this project, I worked on a part of the [Heart Disease UIC dataset](https://github.com/sharmaroshan/Heart-UCI-Dataset). This dataset tells us whether a person has heart disease or not given some symptoms. The First step is to process the data like data Cleaning, Reduction, Normalization, etc.
+The second step is to build a model for data. Using sklearn library, I created a Decision tree, SVM, and KNN models and checked their performances on the dataset. 
 By running the code, some plots will pop up for different steps to show you the process.
 Comments in this code will help you to have a better intuition of what it does.
 
@@ -11,7 +11,7 @@ There are too many features in the dataset.
 Dataset before preprocessing (dataset.xls)
 ![](1.png)
 
-They make the computation expensive and the model probably overfitted. Let's choose 10 features with the highest correlation with the target class and drop other features. Also, some features are not important to the problem, e.g. ID of patients. We don't need them as well.
+They make the computation expensive and the model is probably overfitted. Let's choose 10 features with the highest correlation with the target class and drop other features. Also, some features are not important to the problem, e.g. ID of patients. We don't need them as well.
     
     i = 'Class'
     x = {}
@@ -30,7 +30,7 @@ They make the computation expensive and the model probably overfitted. Let's cho
         if i not in f and i != 'Class':
             data.drop(columns=[i], inplace=True)
             
-Then we can detect and handle outliers using Interquartile range or Z_Score:
+Then we can detect and handle outliers using the Interquartile range or Z_Score:
 
     Q1 = data.quantile(0.25)
     Q3 = data.quantile(0.75)
@@ -45,10 +45,10 @@ Then we can detect and handle outliers using Interquartile range or Z_Score:
     data = data[filtered_entries]
     return data
 
-Dataset has some outliers
+The dataset has some outliers
 ![](box.png)
 
-Now we can clean our data. e.g. if there are Nan values or irrelevant values, we replace them with most frequent values (for categorical features) or the mean (for numerical features). Also, we delete duplicate data in our dataset.
+Now we can clean our data. e.g. if there are Nan values or irrelevant values, we replace them with the most frequent values (for categorical features) or the mean (for numerical features). Also, we delete duplicate data in our dataset.
 
     for i in data.columns:
         for j in data[i].unique():
